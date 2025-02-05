@@ -1,0 +1,29 @@
+Q2) Path: /home/mnassar_personal/cs131/ws2  I used pwd command to find the home directory path.
+    I found the command through (man command)
+
+Q3)Groups: mnassar_personal adm dialout cdrom floppy audio dip video plugdev netdev lxd ubuntu google-sudoers
+   UID: uid=1001. I used commands groups and id -u for my UID. I found the commands through man command and internet
+
+Q4)File contains information about memory: meminfo.
+   File contains information about cpu: cpuinfo
+   Commands: 
+   ls /proc | grep meminfo
+   ls /proc | grep cpu
+   cat /proc/meminfo
+   cat /proc/xpuinfo
+
+Q5) MemTotal:         976896 kB
+    Command: head /proc/meminfo 
+
+Q6) processor       : 0
+    Command: head /proc/cpuinfo
+
+    Processor Archetecture name: x86_64
+    
+    cpu MHz         : 2200.154
+    Command : cat /proc/cpuinfo | grep "cpu MHz"
+
+Q7) VERSION="20.04.6 LTS (Focal Fossa)"
+    Folder: os-release
+    Command:  ls /etc | grep os
+    cat /etc/os-release
