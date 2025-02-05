@@ -1,0 +1,83 @@
+  229  cd cs131
+  230  ls
+  231  clear
+  232  ls
+  233  clear
+  234  mkdir ws2
+  235  cd ws2
+  236  touch ws2.txt
+  237  ls
+  238  pwd > ws2.txt
+  239  cat ws2.txt
+  240  vim ws2.txt
+  241  man id
+  242  id > ws2.txt
+  243  man group
+  244  ls group
+  245  ls /group
+  246  group
+  247  groups
+  248  ls -g
+  249  ls -G
+  250  groups > ws2.txt
+  251  vim ws2.txt
+  252  pwd > ws2.txt
+  253  groups >> ws2.txt
+  254  vim ws2.txt
+  255  id >> ws2.txt
+  256  vim ws2.txt
+  257  ls groups
+  258  groups
+  259  id
+  260  man id
+  261  cat id
+  262  id -u
+  263  id -u >> ws2.txt
+  264  vim ws2.txt
+  265  cd /proc
+  266  ls
+  267  /proc | grep mem
+  268  ls /proc | grep mem
+  269  ls /proc/meminfo
+  270  ls /proc | grep mem >> ws2.txt
+  271  ls /proc | grep mem >> cs131/ws2/ws2.txt
+  272  ls /proc/meminfo
+  273  cat /proc/meminfo
+  274  ls proc | grep cpu
+  275  cd /proc | grep cpu
+  276  ls /proc | grep cpy
+  277  ls /proc | grep cpu
+  278  cat /proc/cpuinfo
+  294  cd cs131
+  295  cd ws2
+  296  vim ws2.txt
+  297  cd /proc
+  298  head /proc/meminfo
+  299  head /proc/cpuinfo
+  300  tail /proc/cpuinfo
+  301  tail /proc/cpuinfo | grep arch
+  302  cat /proc/cpuinfo
+  303  cat /proc/cpuinfo | grep arch
+  304  cat /proc/cpuinfo | grep family
+  305  lscpu | grep Architecture
+  306  ls /proc/cpuinfo | grep speed
+  308  cat /proc/cpuinfo | grep "cpu MHz"
+  316  cd ws2
+  317  ls
+  318  cd cs131
+  319  cd ws2
+  320  ls
+  321  vim ws2.txt
+  322  ls etc | grep os
+  323  cd /etc
+  324  ls
+  325  cat /erc | grep os
+  326  cat /etc | grep os
+  327  ls /etc | grep os
+  328  cat /etc/os-release
+  339  vim ws2.txt
+  340  git add .
+  341  git commit -m "Answered ws2 questions in ws2.txt"
+  342  git push -u origin main
+  343  touch cmds.log
+  344  history >> cmds.log
