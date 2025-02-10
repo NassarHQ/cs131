@@ -1,0 +1,43 @@
+  364  touch jan2_locations.txt
+  365  head 2019-01-h1.csv
+  366  mv 2019-01-h1.csv ws3
+  367  cd ..
+  368  mv 2019-01-h1.csv ws3
+  369  cd ws3
+  370  head 2019-01-h1.csv
+  372  grep "2019-01-02" 2019-01-h1.csv | cut -d',' -f8 > jan2_locations.txt
+  374  head jan2_locations.txt
+  375  sort -n jan2_locations.txt | uniq -c | sort -nr | head -3
+  376  sort -n jan2_locations.txt | uniq -c | sort -nr | head -3 > ws3.txt
+  377  vim ws3.txt
+  378  touch jan10_locations.txt
+  379  grep "2019-01-10" 2019-01-h1.csv | cut -d',' -f8 > jan10_locations.txt
+  380  head jan10_locations.txt
+  381  man uniq
+  382  sort -n jan10_locations.txt | uniq -c | sort -nr | head -3 >> ws3.txt
+  384  vim ws3.txt
+  385  sort -n jan2_locations.txt | uniq -c | sort -nr | head -3
+  386  sort -n jan10_locations.txt | uniq -c | sort -nr | head -3
+  387  cat -A ws3.txt
+  388  head jan2_locations.txt
+  389  head jan10_locations.txt
+  390  grep "^2019-01-02" 2019-01-h1.csv | cut -d',' -f8 | grep "^[0-9]\+$" | sort -n | uniq -c | sort -nr | head -3
+  391  grep '^"2019-01-02' 2019-01-h1.csv | cut -d',' -f8 | tr -d '"' | grep "^[0-9]\+$" | sort -n | uniq -c | sort -nr | head -3
+  392  grep "2019-01-02" 2019-01-h1.csv | head -5
+  393  grep "2019-01-02" 2019-01-h1.csv | cut -d',' -f8 | head -10
+  394  grep "2019-01-02" 2019-01-h1.csv | cut -d',' -f8 | cat -A | head -10
+  395  grep "2019-01-02" 2019-01-h1.csv | cut -d',' -f8 | tr -d '"' | head -10
+  396  grep "2019-01-02" 2019-01-h1.csv | cut -d',' -f8 | tr -d '"' | sort -n | uniq -c | head -10
+  397  grep "2019-01-02" 2019-01-h1.csv | cut -d',' -f8 | tr -d '"' | grep -v '^$' | sort -n | uniq -c | sort -nr | head -3
+  398  vim ws3.txt
+  399  echo "2019-01-h1.csv" >> .gitignore
+  400  git add .gitignore
+  401  git commit -m "Added dataset to .gitignore"
+  402  git push origin main
+  403  git statu
+  404  git status
+  405  vim cmds.log
+  406  cd ..
+  407  cd ws3
+  408  touch cmds.log
+  409  history >> cmds.log
