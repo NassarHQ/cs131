@@ -1,0 +1,17 @@
+Mean for 151.0-239.0: 6.64
+Mean for 239.0-246.0: 12.43
+The highest total amount paid on January 10, 2019, is: 36090.3
+Top 10 Most Popular Drop-off Locations for Rides with 3 or More Passengers:
+
+  19897 236.0
+  18013 161.0
+  16686 237.0
+  16556 230.0
+  14324 170.0
+  13964 48.0
+  13902 162.0
+  13472 142.0
+  12852 239.0
+  12194 141.0
+
+The first column represents the number of rides, and the second column represents the Drop-off Location ID.
