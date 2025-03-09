@@ -1,0 +1,9 @@
+#!/bin/bash
+
+FILE="$HOME/.bashrc"
+if  [ -f "$FILE" ]; then
+        echo "$FILE is regular file."
+
+elif  [ -d "$FILE" ]; then
+        echo "$FILE is directory."
+fi   
