@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 #!/bin/bash
 z=2
 while [ $z -lt 6 ]
@@ -25,6 +26,8 @@ echo $c
 d=$(ls /bin | grep bash)
 echo $d
 =======
+=======
+>>>>>>> f547ecec229ccaef3baa6e729411b53613a33707
 # By: Mohammed Nassar
 # Date: Mar 8, 2025
 # CS131 WS4
@@ -50,5 +53,9 @@ for vendorid in 1.0 2.0 4.0; do
 
 	# Add all files into .gitignore
 	echo "$outputfile" >> /home/mnassar_personal/cs131/.gitignore
+<<<<<<< HEAD
 done
 >>>>>>> mo
+=======
+done
+>>>>>>> f547ecec229ccaef3baa6e729411b53613a33707
