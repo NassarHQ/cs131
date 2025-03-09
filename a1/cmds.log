@@ -1,0 +1,43 @@
+# Navigate to the correct directory
+cd cs131
+cd a1
+cd FARE
+
+# Rename incorrect file name (if needed)
+mv 151.0-239.0-txt 151.0-239.0.txt
+
+# Check contents of the fare amount files
+head 151.0-239.0.txt
+head 239.0-246.0.txt
+cat 151.0-239.0.txt
+cat 239.0-246.0.txt
+
+# Compute sum of fare amounts
+sum1=$(paste -sd+ 151.0-239.0.txt | bc)
+count1=$(wc -l < 151.0-239.0.txt)
+mean1=$(echo "scale=2; $sum1 / $count1" | bc)
+
+sum2=$(paste -sd+ 239.0-246.0.txt | bc)
+count2=$(wc -l < 239.0-246.0.txt)
+mean2=$(echo "scale=2; $sum2 / $count2" | bc)
+
+# Save the mean values to a1.txt
+echo "Mean for 151.0-239.0: $mean1" > ~/cs131/a1/a1.txt
+echo "Mean for 239.0-246.0: $mean2" >> ~/cs131/a1/a1.txt
+
+# Find the highest total amount paid on January 10, 2019
+echo "The highest total amount paid on January 10, 2019, is: $(grep '2019-01-10' ~/cs131/a1/FARE/2019-01-h1.csv | cut -d',' -f17 | sort -nr | head -n 1)" >> ~/cs131/a1/a1.txt
+
+# Find the 10 most popular drop-off locations for rides with 3+ passengers
+echo "Top 10 Most Popular Drop-off Locations for Rides with 3 or More Passengers:" >> ~/cs131/a1/a1.txt
+echo "" >> ~/cs131/a1/a1.txt
+grep -E '^[^,]+,[^,]+,[^,]+,[3-9]' ~/cs131/a1/FARE/2019-01-h1.csv | cut -d',' -f9 | sort | uniq -c | sort -nr | head -n 10 >> ~/cs131/a1/a1.txt
+echo "" >> ~/cs131/a1/a1.txt
+echo "The first column represents the number of rides, and the second column represents the Drop-off Location ID." >> ~/cs131/a1/a1.txt
+
+# Verify final file contents
+cat ~/cs131/a1/a1.txt
+
+# Save command history
+history | tail -n 100 > cmds.log
+
