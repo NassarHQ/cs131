@@ -1,0 +1,91 @@
+#!/bin/bash
+
+# Check if the user provided at least one argument (option).
+if [[ -z "$1" ]]; then
+	echo "Usage: autoclean --cache | --logs | --old"
+	exit 1  # Exit if no argument is given
+fi
+
+# Loop through all provided options
+for option in "$@"; do
+	
+	# Handle the --cache option
+    	if [[ "$option" == "--cache" ]]; then
+		echo "Finding cache files..."
+
+		# Find all files inside ~/.cache directory
+		cache_files=$(find ~/.cache -type f)
+
+		# Check if there are no cache files
+		if [[ -z "$cache_files" ]]; then
+			echo "No cache files found."
+		else
+			# Display the cache files found
+			echo "$cache_files"
+		
+			# Ask the user if they want to delete the cache files
+	    		read -p "Do you want to delete these cache files? (y/n) " confirm
+	    		if [[ "$confirm" == "y" ]]; then
+				rm -rf ~/.cache/*  # Delete all cache files
+		    		echo "Cache files deleted."
+	    		else
+		    		echo "Cache files NOT deleted."
+	    		fi
+		fi
+    	fi
+
+    	# Handle the --logs option
+    	if [[ "$option" == "--logs" ]]; then
+	    	echo "Searching for log files..."
+
+		# Find all files inside ~/logs directory, ignoring errors if the directory doesn't exist
+		log_files=$(find ~/logs -type f 2>/dev/null)
+
+		# Check if there are no log files
+		if [[ -z "$log_files" ]]; then
+			echo "No log files found."
+		else
+			# Display the log files found
+			echo "$log_files"
+
+	    		# Ask the user if they want to delete the log files
+	    		read -p "Do you want to delete these log files? (y/n) " confirm
+	    		if [[ "$confirm" == "y" ]]; then
+		    		rm -rf ~/logs/*  # Delete all log files
+		    		echo "Log files deleted."
+	    		else
+		    		echo "Log files NOT deleted."
+	    		fi
+		fi
+    	fi
+	
+	# Handle the --old option
+	if [[ "$option" == "--old" ]]; then
+		# Ask the user how many days old the files should be before deletion
+		read -p "Delete files older than how many days?" days
+
+		echo "Searching for files older than $days days..."
+
+		# Find files older than specified number of days in safe locations
+		old_files=$(find ~/Documents ~/Downloads ~/Desktop -type f -mtime +$days 2>/dev/null)
+
+		# Check if there are no old files found
+		if [[ -z "$old_files" ]]; then
+			echo "No old files found."
+		else
+			# Display the found files
+			echo "$old_files"
+
+			# Ask the user for confirmation before deleting the old files
+			read -p "Do you want to delete these old files? (y/n) " confirm
+			if [[ "$confirm" == "y" ]]; then
+				# Delete the listed files using xargs to handle large number of files safely
+				echo "$old_files" | xargs rm -f 2>/dev/null
+				echo "Files older than $days deleted."
+			else
+				echo "Old files NOT deleted."
+			fi
+		fi
+	fi
+done
+
