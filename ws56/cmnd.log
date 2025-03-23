@@ -1,0 +1,67 @@
+# By: Mohammed Nassar
+# CS-131
+# WS56
+
+#SED
+# Task 1: Collect lines with Vendor 2.0 into vendor2.csv
+touch vendor2.csv
+sed -n '/^2\.0/p' 2019-01-h1.csv >> vendor2.csv
+wc vendor2.csv
+head vendor2.csv
+tail vendor2.csv
+head -100 vendor2.csv
+
+# Task 2: Remove colons (:), double quotes ("), and hyphens (-)
+touch no-separators.csv
+sed 's/[:"-]//g' 2019-01-h1.csv >> no-separators.csv
+head -10 no-separators.csv
+
+# Task 3: Remove fractional parts of all numbers
+sed 's/\.[0-9]*//g' no-separators.csv >> no-fractions.csv
+head -10 no-fractions.csv
+
+#AWK
+# Task 1 (AWK): Frequency of tip amounts for total >= $10
+awk -F',' 'NR > 1 && $17 >= 10 { print $14 }' 2019-01-h1.csv | sort -n | uniq -c | awk '{print $2, $1}' >> ws56.txt
+
+# Task 2 (AWK): Top 20 most common tips overall
+awk -F',' 'NR > 1 { print $14 }' 2019-01-h1.csv | sort -n | uniq -c | sort -nr | head -20 >> ws56.txt
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+~                                                                                                              
+-- INSERT --                                                                                 4,1           All
