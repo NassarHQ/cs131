@@ -1,0 +1,26 @@
+# Create and navigate to assignment directory
+cd cs131
+mkdir a3
+cd a3
+
+# Create grades.csv file
+vim grades.csv
+
+# Edit the AWK script
+vim grader.awk
+
+# Run the AWK script to test the output
+awk -f grader.awk grades.csv
+
+# Check and prepare the output file
+vim a3.txt
+
+# Confirm output is correct
+awk -f grader.awk grades.csv
+
+# Review all files before submission
+ls
+cat grader.awk
+cat a3.txt
+cat grades.csv
+

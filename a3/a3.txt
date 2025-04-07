@@ -1,0 +1,16 @@
+# This is the output for the full command. 
+# It prints student name, total score for classes
+# Average scores for all classes
+# The status if they failed or not depends on their AVG score
+# Last two lines they print the top Student name and their score
+# And the bottom student name and their score
+
+# Command Used: # awk -f grader.awk grades.csv
+
+Name:  David | Total Score:  195 | AVG Score 65 | Status:  FAIL
+Name:  Eve | Total Score:  265 | AVG Score 88.3333 | Status:  PASS
+Name:  Bob | Total Score:  246 | AVG Score 82 | Status:  PASS
+Name:  Charlie | Total Score:  270 | AVG Score 90 | Status:  PASS
+Name:  Alice | Total Score:  253 | AVG Score 84.3333 | Status:  PASS
+Top student:  Charlie with score:  270
+Bottom student:  David with score:  195
